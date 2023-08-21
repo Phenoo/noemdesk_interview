@@ -113,7 +113,7 @@ const Body = ({openModal}: {openModal:  any}) => {
                     <ul>
                     {value === "vehicles" && (
                         cars.map(car => (
-                        <li key={car.id} onClick={() => openModal(car)} className='cursor-pointer flex gap-2 h-28 items-center border-b'>
+                        <li key={car.id}  className='cursor-pointer flex gap-2 h-28 items-center border-b'>
                             <img src={car.image} alt={car.name} className="w-16 h-14 mr-2 block" />
                             <div>
                                 <div className='block text-sm'>
@@ -132,7 +132,7 @@ const Body = ({openModal}: {openModal:  any}) => {
                     {
                         value === "drivers" && (
                             drivers.map(driver => (
-                            <li key={driver.id} onClick={() => openModal(driver)} className='cursor-pointer flex gap-2 h-28 items-center border-b'>
+                            <li key={driver.id}  className='cursor-pointer flex gap-2 h-28 items-center border-b'>
                                 <img src={driver.image} alt={driver.name} className="w-16 h-14  mr-2 block object-contain" />
                                 <div>
                                     <span className='text-sm font-bold block'>
@@ -150,7 +150,16 @@ const Body = ({openModal}: {openModal:  any}) => {
             
                     </div>
               </div>
-              <SchedulerDemo />
+              {
+                value === "vehicles" && (
+                  <SchedulerDemo onClick={() => openModal(cars[0])}/>
+                )
+              }
+               {
+                value === "drivers" && (
+                  <SchedulerDemo onClick={() => openModal(drivers[1])}/>
+                )
+              }
           </div>
         </div>
       </div>

@@ -1,11 +1,13 @@
 import React from 'react'
 import { Scheduler } from "@aldabil/react-scheduler";
 
-const SchedulerDemo = () => {
+const SchedulerDemo = ({onClick} : {onClick: any}) => {
   return (
     <div className='bg-white border  z-0 border-gray-400 p-4 w-full rounded-md'>
       <Scheduler
         view="month"
+        onEventClick={onClick}
+        
         
         events={[
             {
@@ -13,6 +15,7 @@ const SchedulerDemo = () => {
             title: "Wisom Booked",
             start: new Date("2023/8/2 09:30"),
             end: new Date("2023/8/4 10:30"),
+
             },
             {
             event_id: 2,
