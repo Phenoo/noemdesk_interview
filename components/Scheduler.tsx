@@ -7,7 +7,7 @@ const SchedulerDemo = ({onClick} : {onClick: any}) => {
       <Scheduler
         view="month"
         onEventClick={onClick}
-        
+        draggable
         
         events={[
             {
